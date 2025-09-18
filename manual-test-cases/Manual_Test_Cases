@@ -1,0 +1,28 @@
+# Manual Test Cases - Jr SQA Assessment (Abdul_Ghani)
+
+Below are 22 manual test cases prepared for the Demo Web Shop application.
+
+| ID | Objective | Priority | Type | Pre-requisite | Test Data | Steps | Expected Result |
+|----|-----------|----------|------|---------------|-----------|-------|-----------------|
+| TC_001_Registration_Positive | Register a new user with valid data | P0 | Functional | None | Valid first/last/email/password | Open site > Register > Fill form > Submit | "Your registration completed" message, user logged in |
+| TC_002_Registration_EmailAlreadyTaken_Negative | Validate error when registering with existing email | P1 | Negative | Existing account | Existing email | Register with same email | Error message displayed |
+| TC_003_Login_Positive | Login with valid credentials | P0 | Functional | Registered user | Valid credentials | Login with correct details | User logged in, "Log out" visible |
+| TC_004_Login_InvalidPassword_Negative | Invalid login with wrong password | P1 | Negative | Registered user | Wrong password | Attempt login | "Login was unsuccessful" error |
+| TC_005_NavigateToNotebooks | Navigate Computers > Notebooks | P1 | Functional | None | N/A | Hover Computers, click Notebooks | Notebooks page displayed |
+| TC_006_SelectProduct_PDPValidation | Open product PDP | P1 | Functional | Product exists | N/A | Click product link | PDP shows correct product name/price |
+| TC_007_AddToCart_HappyPath | Add product to cart | P0 | Functional | Logged in user | Any product | Add to cart | Cart badge increments, success notification |
+| TC_008_Cart_Calculation_Subtotal | Subtotal calculation | P0 | Functional | Product in cart | Quantity=2 | Add item twice | Subtotal = price*2 |
+| TC_009_Cart_RemoveItem | Remove item from cart | P2 | Functional | Item in cart | N/A | Remove item | Cart updated, total zero |
+| TC_010_Checkout_BillingValidation | Fill billing info at checkout | P0 | Functional | Product in cart | Valid address | Checkout > Fill address | Address saved and displayed on confirmation |
+| TC_011_Checkout_ShippingMethod | Select shipping method | P1 | Functional | Checkout started | N/A | Choose shipping | Shipping selected |
+| TC_012_Checkout_PaymentMethodDisplay | Select payment method | P1 | Functional | Checkout started | N/A | Choose payment | Payment selected |
+| TC_013_OrderConfirmation_OrderNumber | Confirm order and validate order number | P0 | Functional | Valid checkout | N/A | Place order | "Thank you" + order number shown |
+| TC_014_InvalidZip_Billing_Negative | Invalid ZIP validation | P2 | Negative | Checkout started | Invalid ZIP | Enter invalid ZIP | Validation error displayed |
+| TC_015_CrossBrowser_Chrome_Firefox | Cross browser validation | P0 | Cross-browser | None | N/A | Run in Chrome & Firefox | Flow works in both |
+| TC_016_Accessibility_AltText | Product images alt text | P2 | Accessibility | None | N/A | Inspect product images | All images have alt text |
+| TC_017_Price_Rounding_Boundary | Verify price rounding | P2 | Functional | Prices with decimals | N/A | Checkout items | Rounding consistent |
+| TC_018_MaxFieldLengths | Field length boundaries | P3 | Functional | None | Long strings | Input >255 chars | Error or truncate |
+| TC_019_Session_Timeout | Session timeout handling | P3 | Functional | Logged in | N/A | Idle until timeout | Auto logout or prompt |
+| TC_020_CurrencyFormatting | Currency format consistency | P2 | Functional | None | N/A | View prices | Prices consistent with currency |
+| TC_021_OrderHistory_PostOrder | Order history check | P1 | Functional | Completed order | N/A | Go to My Account > Orders | Recent order displayed |
+| TC_022_ConcurrentAddToCart_Stress | Add to cart from 2 tabs | P3 | Stress | Two sessions | Same product | Add to cart in both | Totals consistent, no errors |
